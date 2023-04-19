@@ -1,12 +1,22 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.DAL;
+using WindowsFormsApp1.DAL.API;
+using WindowsFormsApp1.DAL.API.Table;
+using WindowsFormsApp1.Models;
+using WindowsFormsApp1.Models.Tables;
 
 namespace WindowsFormsApp1
 {
@@ -24,7 +34,27 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
+            //if (Users.Instance.CheckLogin(txtUserName.Text, txtPassWord.Text).Rows.Count > 0)
+            //{
+            //    MessageBox.Show("Đăng Nhập thành công");
+            //    new f_Home().Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("wrong acount or password");
+
+            //}
+            MyData data = APITable.Instance.GetAll();
+                foreach (var item in data.data.data)
+                {
+                MessageBox.Show(item.Name);
+                }
+
+
+
         }
+ 
     }
 }

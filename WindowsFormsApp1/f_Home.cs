@@ -17,7 +17,12 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("Bạn có muôn thoát chương trình không","thông báo",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                Application.Exit();
+
+
+            }
         }
 
         private void buttonX7_Click(object sender, EventArgs e)
@@ -35,6 +40,9 @@ namespace WindowsFormsApp1
             f_ODER.ShowDialog();    
         }
 
-      
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

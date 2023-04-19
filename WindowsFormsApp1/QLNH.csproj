@@ -34,12 +34,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>C:\Users\namle\Downloads\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Zalo Received Files\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer\numbertextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAL\API\BaseAPI.cs" />
+    <Compile Include="DAL\API\BaseAPIInterFace.cs" />
+    <Compile Include="Models\Tables\TableDao.cs" />
+    <Compile Include="DAL\API\Table\APITable.cs" />
+    <Compile Include="DAL\Sqlserver\category.cs" />
+    <Compile Include="DAL\Sqlserver\ConnectSever.cs" />
+    <Compile Include="DAL\Sqlserver\food.cs" />
+    <Compile Include="DAL\Sqlserver\Query.cs" />
+    <Compile Include="DAL\Sqlserver\staff.cs" />
+    <Compile Include="DAL\Sqlserver\Users.cs" />
     <Compile Include="f_addDM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,12 +112,10 @@
     <Compile Include="itemfood.Designer.cs">
       <DependentUpon>itemfood.cs</DependentUpon>
     </Compile>
-    <Compile Include="itemNV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="itemNV.Designer.cs">
-      <DependentUpon>itemNV.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Customer\customersDao.cs" />
+    <Compile Include="Models\Staff\staffDao.cs" />
+    <Compile Include="Models\Tables\Table.cs" />
+    <Compile Include="Models\User\usersDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="f_addDM.resx">
@@ -122,9 +139,6 @@
     <EmbeddedResource Include="itemfood.resx">
       <DependentUpon>itemfood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="itemNV.resx">
-      <DependentUpon>itemNV.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -135,6 +149,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

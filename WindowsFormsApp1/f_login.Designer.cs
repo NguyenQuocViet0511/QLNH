@@ -54,7 +54,7 @@
             this.btnLogin.Location = new System.Drawing.Point(801, 479);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(216, 56);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -96,7 +96,7 @@
             this.btnExit.Location = new System.Drawing.Point(801, 575);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(216, 58);
-            this.btnExit.TabIndex = 7;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btn_Exit_Click);
@@ -106,12 +106,12 @@
             this.txtPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassWord.Location = new System.Drawing.Point(813, 382);
+            this.txtPassWord.Location = new System.Drawing.Point(819, 382);
             this.txtPassWord.Multiline = true;
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.PasswordChar = '*';
-            this.txtPassWord.Size = new System.Drawing.Size(245, 37);
-            this.txtPassWord.TabIndex = 11;
+            this.txtPassWord.Size = new System.Drawing.Size(239, 37);
+            this.txtPassWord.TabIndex = 4;
             // 
             // pictureBox5
             // 
