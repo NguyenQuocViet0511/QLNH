@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.Models.Tables
+namespace WindowsFormsApp1.Models.Food
 {
 
     public class MyData
@@ -18,7 +18,8 @@ namespace WindowsFormsApp1.Models.Tables
     {
         public string total;
 
-        public List<Table> data;
+        public List<Food> data;
+        
     }
 
  

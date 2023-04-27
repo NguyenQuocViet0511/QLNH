@@ -19,6 +19,8 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Security.Policy;
 using Newtonsoft.Json;
 using WindowsFormsApp1.DAL.Sqlserver;
+using WindowsFormsApp1.DAL.APIController.Food;
+using WindowsFormsApp1.Models.Food;
 
 namespace WindowsFormsApp1
 {
@@ -40,14 +42,17 @@ namespace WindowsFormsApp1
         }
         private void Loaddatafood()
         {
-            dgv_food.DataSource = food.Instance.getfood();
+            MyData myData = APIFood.Instance.GetAll();
+            dgv_food.DataSource = myData.data.data;
+
+
             //clearbindings();
-            txt_foodname.DataBindings.Add("text", dgv_food.DataSource, "foodname");
+            txt_foodname.DataBindings.Add("text", dgv_food.DataSource, "name");
             txt_foodprice.DataBindings.Add("text", dgv_food.DataSource, "price");
-            cbn_categoryfood.DataBindings.Add("text", dgv_food.DataSource, "categoryname");
-            cbn_categoryfood.ValueMember = "idcategory";
-            cbn_categoryfood.DisplayMember = "categoryname";
-            cbn_categoryfood.DataSource = category.Instance.getcategory();
+            //cbn_categoryfood.DataBindings.Add("text", dgv_food.DataSource, "categoryname");
+            //cbn_categoryfood.ValueMember = "idcategory";
+            //cbn_categoryfood.DisplayMember = "categoryname";
+            //cbn_categoryfood.DataSource = category.Instance.getcategory();
             txt_discountfood.DataBindings.Add("text", dgv_food.DataSource, "discount");
 
 

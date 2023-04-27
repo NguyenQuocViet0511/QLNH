@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.DAL.API
+namespace WindowsFormsApp1.DAL.APIController
 {
     interface BaseAPIInterFace
     {

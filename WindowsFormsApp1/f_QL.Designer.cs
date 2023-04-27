@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             DevComponents.Editors.ComboItem Nam;
             DevComponents.Editors.ComboItem comboItem1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
@@ -48,8 +48,10 @@
             this.idusers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txt_position = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_idstaff = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txt_staffnumber = new WindowsFormsApp1.Customer.numbertextbox();
             this.buttonX12 = new DevComponents.DotNetBar.ButtonX();
             this.txt_staffname = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_staffaddress = new System.Windows.Forms.TextBox();
@@ -119,9 +121,8 @@
             this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countfood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.images = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_position = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_staffnumber = new WindowsFormsApp1.Customer.numbertextbox();
+            this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Nam = new DevComponents.Editors.ComboItem();
             comboItem1 = new DevComponents.Editors.ComboItem();
             this.panel1.SuspendLayout();
@@ -172,8 +173,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -232,14 +233,14 @@
             this.number,
             this.image,
             this.idusers});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_staff.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_staff.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_staff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_staff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_staff.Location = new System.Drawing.Point(0, 0);
@@ -359,6 +360,15 @@
             this.groupPanel1.Text = "Thông Tin";
             this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
             // 
+            // txt_position
+            // 
+            this.txt_position.Enabled = false;
+            this.txt_position.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_position.Location = new System.Drawing.Point(11, 362);
+            this.txt_position.Name = "txt_position";
+            this.txt_position.Size = new System.Drawing.Size(181, 28);
+            this.txt_position.TabIndex = 27;
+            // 
             // txt_idstaff
             // 
             this.txt_idstaff.Enabled = false;
@@ -378,6 +388,15 @@
             this.labelX11.Size = new System.Drawing.Size(171, 31);
             this.labelX11.TabIndex = 25;
             this.labelX11.Text = "Mã nhân viên :";
+            // 
+            // txt_staffnumber
+            // 
+            this.txt_staffnumber.Enabled = false;
+            this.txt_staffnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_staffnumber.Location = new System.Drawing.Point(393, 224);
+            this.txt_staffnumber.Name = "txt_staffnumber";
+            this.txt_staffnumber.Size = new System.Drawing.Size(231, 35);
+            this.txt_staffnumber.TabIndex = 24;
             // 
             // buttonX12
             // 
@@ -649,15 +668,16 @@
             this.discount,
             this.countfood,
             this.images,
-            this.idcategory});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_food.DefaultCellStyle = dataGridViewCellStyle2;
+            this.category_name,
+            this.id_category});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_food.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_food.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_food.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_food.Location = new System.Drawing.Point(0, 0);
@@ -1231,7 +1251,7 @@
             // 
             // idFood
             // 
-            this.idFood.DataPropertyName = "idfood";
+            this.idFood.DataPropertyName = "id";
             this.idFood.HeaderText = "Mã Món Ăn";
             this.idFood.Name = "idFood";
             this.idFood.ReadOnly = true;
@@ -1239,7 +1259,7 @@
             // foodname
             // 
             this.foodname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.foodname.DataPropertyName = "foodname";
+            this.foodname.DataPropertyName = "name";
             this.foodname.HeaderText = "Tên Món Ăn";
             this.foodname.Name = "foodname";
             this.foodname.ReadOnly = true;
@@ -1267,36 +1287,25 @@
             // 
             // images
             // 
-            this.images.DataPropertyName = "image";
+            this.images.DataPropertyName = "images";
             this.images.HeaderText = "Hình ảnh";
             this.images.Name = "images";
             this.images.ReadOnly = true;
             // 
-            // idcategory
+            // category_name
             // 
-            this.idcategory.DataPropertyName = "idcategory";
-            this.idcategory.HeaderText = "Mã danh mục";
-            this.idcategory.Name = "idcategory";
-            this.idcategory.ReadOnly = true;
-            this.idcategory.Visible = false;
+            this.category_name.DataPropertyName = "category_name";
+            this.category_name.HeaderText = "Danh Mục";
+            this.category_name.Name = "category_name";
+            this.category_name.ReadOnly = true;
             // 
-            // txt_position
+            // id_category
             // 
-            this.txt_position.Enabled = false;
-            this.txt_position.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_position.Location = new System.Drawing.Point(11, 362);
-            this.txt_position.Name = "txt_position";
-            this.txt_position.Size = new System.Drawing.Size(181, 28);
-            this.txt_position.TabIndex = 27;
-            // 
-            // txt_staffnumber
-            // 
-            this.txt_staffnumber.Enabled = false;
-            this.txt_staffnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_staffnumber.Location = new System.Drawing.Point(393, 224);
-            this.txt_staffnumber.Name = "txt_staffnumber";
-            this.txt_staffnumber.Size = new System.Drawing.Size(231, 35);
-            this.txt_staffnumber.TabIndex = 24;
+            this.id_category.DataPropertyName = "id_category";
+            this.id_category.HeaderText = "id_category";
+            this.id_category.Name = "id_category";
+            this.id_category.ReadOnly = true;
+            this.id_category.Visible = false;
             // 
             // f_QL
             // 
@@ -1422,13 +1431,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_idstaff;
         private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_position;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFood;
         private System.Windows.Forms.DataGridViewTextBoxColumn foodname;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn countfood;
         private System.Windows.Forms.DataGridViewTextBoxColumn images;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcategory;
-        private DevComponents.DotNetBar.Controls.TextBoxX txt_position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_category;
     }
 }

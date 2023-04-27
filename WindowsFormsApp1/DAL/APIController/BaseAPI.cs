@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Models;
 
-namespace WindowsFormsApp1.DAL.API
+namespace WindowsFormsApp1.DAL.APIController
 {
     public class BaseAPI : BaseAPIInterFace
     {
@@ -28,19 +28,17 @@ namespace WindowsFormsApp1.DAL.API
             set => instance = value;
         }
 
-        public string All(string url, NameValueCollection table, string Method)
+        public string All(string url, NameValueCollection Table, string Method)
         {
             WebClient Client = new WebClient();
-            var responsebytes = Client.UploadValues(url, Method, table);
-            string responsebody = Encoding.UTF8.GetString(responsebytes);
-            return responsebody;
+            //Client.Headers[HttpRequestHeader.ContentType] = "application/json";
+            Client.Encoding  = Encoding.UTF8;
+            var responsebytes = Client.UploadValues(url, Method, Table);
+            string reponsive = UnicodeEncoding.UTF8.GetString(responsebytes);
+            return reponsive;
         }
 
-        public string All(string url, string Method, NameValueCollection table = null)
-        {
-            throw new NotImplementedException();
-        }
-
+   
         public string Get(string url)
         {
             WebClient Client = new WebClient();

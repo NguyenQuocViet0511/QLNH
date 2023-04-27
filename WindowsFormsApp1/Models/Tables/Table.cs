@@ -9,24 +9,24 @@ namespace WindowsFormsApp1.Models.Tables
     public class Table
     {
         
-        private string id;
-        private string name;
-        private string status;
+        private int ID;
+        private string Name;
+        private string Status;
 
         public Table()
         {
 
         }
-        public Table(string id, string name, string status)
+        public Table(int id, string name, string status)
         {
-            this.id = id;
+            this.ID = id;
             this.Name = name;
-            this.Status = status;
+            this.status = status;
 
         }
 
-        public string Id { get => id; set => id = value; }
-        public string Name { get => name; set => name = value; }
-        public string Status { get => status; set => status = value; }
+        public int id { get => ID; set => ID = value; }
+        public string name { get => Name; set => Name = value; }
+        public string status { get => Status; set => Status = value; }
     }
 }

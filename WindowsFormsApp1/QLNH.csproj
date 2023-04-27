@@ -60,10 +60,14 @@
     <Compile Include="Customer\numbertextbox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAL\API\BaseAPI.cs" />
-    <Compile Include="DAL\API\BaseAPIInterFace.cs" />
+    <Compile Include="DAL\APIController\BaseAPI.cs" />
+    <Compile Include="DAL\APIController\BaseAPIInterFace.cs" />
+    <Compile Include="DAL\APIController\Food\APIFood.cs" />
+    <Compile Include="DAL\Const.cs" />
+    <Compile Include="Models\Food\Food.cs" />
+    <Compile Include="Models\Food\FoodDao.cs" />
     <Compile Include="Models\Tables\TableDao.cs" />
-    <Compile Include="DAL\API\Table\APITable.cs" />
+    <Compile Include="DAL\APIController\Table\APITable.cs" />
     <Compile Include="DAL\Sqlserver\category.cs" />
     <Compile Include="DAL\Sqlserver\ConnectSever.cs" />
     <Compile Include="DAL\Sqlserver\food.cs" />
@@ -280,6 +284,9 @@
   <ItemGroup>
     <Content Include="ql\119000213 %281%29 – Đã sửa.png" />
     <None Include="ql\le.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

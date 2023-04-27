@@ -13,8 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAL;
-using WindowsFormsApp1.DAL.API;
-using WindowsFormsApp1.DAL.API.Table;
+using WindowsFormsApp1.DAL.APIController;
+using WindowsFormsApp1.DAL.APIController.Table;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Models.Tables;
 
@@ -37,20 +37,16 @@ namespace WindowsFormsApp1
 
             //if (Users.Instance.CheckLogin(txtUserName.Text, txtPassWord.Text).Rows.Count > 0)
             //{
-            //    MessageBox.Show("Đăng Nhập thành công");
-            //    new f_Home().Show();
-            //    this.Hide();
+            MessageBox.Show("Đăng Nhập thành công");
+                new f_Home().Show();
+            this.Hide();
             //}
             //else
             //{
             //    MessageBox.Show("wrong acount or password");
 
             //}
-            MyData data = APITable.Instance.GetAll();
-                foreach (var item in data.data.data)
-                {
-                MessageBox.Show(item.Name);
-                }
+
 
 
 
