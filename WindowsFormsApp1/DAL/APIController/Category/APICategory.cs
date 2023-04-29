@@ -9,66 +9,59 @@ using System.Web.UI.WebControls;
 using WindowsFormsApp1.Models.Category;
 using WindowsFormsApp1.Models.Food;
 
-namespace WindowsFormsApp1.DAL.APIController.Food
+namespace WindowsFormsApp1.DAL.APIController.Category
 {
-    public class APIFood
+    public class APICategory
     {
-        private static APIFood instance;
+        private static APICategory instance;
 
-        public static APIFood Instance
+        public static APICategory Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new APIFood();
+                    instance = new APICategory();
                 return instance;
 
             }
             set => instance = value;
         }
 
+
         bool Clickadd = true;
         bool Clickedit = true;
         public bool ClickAdd { get => Clickadd; set => Clickadd = value; }
         public bool ClickEdit { get => Clickedit; set => Clickedit = value; }
 
-        
-
-
-        public FoodData GetAll()
+        public CategoryData GetAll()
         {
-            string Result = BaseAPI.Instance.Get(Const.URL + "food/list");
-            FoodData data = JsonConvert.DeserializeObject<FoodData>(Result);
+            string Result = BaseAPI.Instance.Get(Const.URL + "category/list");
+            CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
             return data;
         }
-        public String Add(string name,string price,string discount,string id_category)
+        public String Add(string name)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            table["price"] = price;
-            table["discount"] = discount;
-            table["count"] = "0";
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "category/create", table, "POST");
             return Result;
         }
-        public String Edit(string id,string name, string price, string discount, string id_category)
+        public String Edit(string id, string name)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
-            table["price"] = price;
-            table["discount"] = discount;
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "category/update", table, "POST");
             return Result;
         }
         public String delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "category/delete", table, "POST");
             return Result;
         }
+
+
     }
 }

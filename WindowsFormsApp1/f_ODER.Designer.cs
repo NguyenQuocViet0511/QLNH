@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_ODER));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -109,7 +110,6 @@
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Left;
             this.button10.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = global::WindowsFormsApp1.Properties.Resources.icons8_Request_Money_32;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button10.Location = new System.Drawing.Point(400, 0);
             this.button10.Name = "button10";
@@ -123,7 +123,6 @@
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Left;
             this.button9.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::WindowsFormsApp1.Properties.Resources.icons8_Initiate_Money_Transfer_32;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button9.Location = new System.Drawing.Point(300, 0);
             this.button9.Name = "button9";
@@ -137,7 +136,6 @@
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Left;
             this.button8.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::WindowsFormsApp1.Properties.Resources.icons8_debt_32;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button8.Location = new System.Drawing.Point(200, 0);
             this.button8.Name = "button8";
@@ -151,7 +149,6 @@
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Left;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::WindowsFormsApp1.Properties.Resources.icons8_save_32;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button7.Location = new System.Drawing.Point(100, 0);
             this.button7.Name = "button7";
@@ -165,7 +162,6 @@
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Left;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::WindowsFormsApp1.Properties.Resources.icons8_chef_32;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
@@ -189,7 +185,6 @@
             // button12
             // 
             this.button12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button12.Image = global::WindowsFormsApp1.Properties.Resources.icons8_table_321;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button12.Location = new System.Drawing.Point(357, 0);
             this.button12.Name = "button12";
@@ -202,7 +197,6 @@
             // button11
             // 
             this.button11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button11.Image = global::WindowsFormsApp1.Properties.Resources.icons8_note_32;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button11.Location = new System.Drawing.Point(432, 0);
             this.button11.Name = "button11";
@@ -256,7 +250,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_search_32;
             this.pictureBox1.Location = new System.Drawing.Point(314, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
@@ -298,7 +291,7 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Image = global::WindowsFormsApp1.Properties.Resources.icons8_add_64;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(412, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 78);
@@ -309,7 +302,6 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Image = global::WindowsFormsApp1.Properties.Resources.icons8_coconut_cocktail_64;
             this.button4.Location = new System.Drawing.Point(309, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 78);
@@ -320,7 +312,6 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_grill_64;
             this.button3.Location = new System.Drawing.Point(206, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 78);
@@ -331,7 +322,6 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Image = global::WindowsFormsApp1.Properties.Resources.icons8_noodles_64;
             this.button2.Location = new System.Drawing.Point(103, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 78);
@@ -342,7 +332,6 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Image = global::WindowsFormsApp1.Properties.Resources.icons8_heart_64;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 78);

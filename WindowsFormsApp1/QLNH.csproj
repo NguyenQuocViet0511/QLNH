@@ -62,8 +62,11 @@
     </Compile>
     <Compile Include="DAL\APIController\BaseAPI.cs" />
     <Compile Include="DAL\APIController\BaseAPIInterFace.cs" />
+    <Compile Include="DAL\APIController\Category\APICategory.cs" />
     <Compile Include="DAL\APIController\Food\APIFood.cs" />
     <Compile Include="DAL\Const.cs" />
+    <Compile Include="Models\Category\Category.cs" />
+    <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
     <Compile Include="Models\Tables\TableDao.cs" />
@@ -122,6 +125,12 @@
     <Compile Include="Models\User\usersDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\QLMenu\QLMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLMenu\QLMenu.Designer.cs">
+      <DependentUpon>QLMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="f_addDM.resx">
       <DependentUpon>f_addDM.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\QLMenu\QLMenu.resx">
+      <DependentUpon>QLMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -168,125 +180,131 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\background.jpg" />
+    <None Include="Images\login\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\Untitled.png" />
+    <None Include="Images\login\Untitled.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\ten.png" />
+    <None Include="Images\login\ten.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\ten1.png" />
+    <None Include="Images\login\ten1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\icons8_female_user_64.png" />
+    <None Include="Images\login\icons8_female_user_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\icons8_password_key_64.png" />
+    <None Include="Images\login\icons8_password_key_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="login\logo.png" />
+    <None Include="Images\login\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_home_64.png" />
+    <None Include="Images\Home\icons8_home_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_add_16.png" />
+    <None Include="Images\Home\icons8_add_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_add_64.png" />
+    <None Include="Images\Home\icons8_add_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_Cancel_64.png" />
+    <None Include="Images\Home\icons8_Cancel_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_close_window_64.png" />
+    <None Include="Images\Home\icons8_close_window_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_bill_64.png" />
+    <None Include="Images\Home\icons8_bill_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_Tools_64.png" />
+    <None Include="Images\Home\icons8_Tools_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_shutdown_16.png" />
+    <None Include="Images\Home\icons8_shutdown_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_staff_64.png" />
+    <None Include="Images\Home\icons8_staff_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\menu_64.png" />
+    <None Include="Images\Home\menu_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_Request_Money_64.png" />
+    <None Include="Images\Home\icons8_Request_Money_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_table_64.png" />
+    <None Include="Images\Home\icons8_table_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_heart_64.png" />
+    <None Include="Images\oder\icons8_heart_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_noodles_64.png" />
+    <None Include="Images\oder\icons8_noodles_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_coconut_cocktail_64.png" />
+    <None Include="Images\oder\icons8_coconut_cocktail_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_grill_64.png" />
+    <None Include="Images\oder\icons8_grill_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_search_32.png" />
+    <None Include="Images\oder\icons8_search_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_chef_32.png" />
+    <None Include="Images\oder\icons8_chef_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_save_32.png" />
+    <None Include="Images\oder\icons8_save_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_debt_32.png" />
+    <None Include="Images\oder\icons8_debt_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_Initiate_Money_Transfer_32.png" />
+    <None Include="Images\oder\icons8_Initiate_Money_Transfer_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_Request_Money_32.png" />
+    <None Include="Images\oder\icons8_Request_Money_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_note_32.png" />
+    <None Include="Images\oder\icons8_note_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="oder\icons8_table_32.png" />
+    <None Include="Images\oder\icons8_table_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ql\icons8_Add_Male_User_Group_32.png" />
+    <None Include="Images\ql\icons8_Add_Male_User_Group_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ql\icons8_Add_Male_User_Group_64.png" />
+    <None Include="Images\ql\icons8_Add_Male_User_Group_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ql\icons8_admin_settings_male_64.png" />
+    <None Include="Images\ql\icons8_admin_settings_male_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ql\icons8_Delete_Male_User_64.png" />
+    <None Include="Images\ql\icons8_Delete_Male_User_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ql\icons8_female_user_update_64.png" />
+    <None Include="Images\ql\icons8_female_user_update_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_addCS_32.png" />
+    <None Include="Images\Home\icons8_addCS_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Home\icons8_minus_32.png" />
+    <None Include="Images\Home\icons8_minus_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ql\119000213 %281%29 – Đã sửa.png" />
-    <None Include="ql\le.png" />
+    <None Include="Images\Home\32_32.png" />
+    <None Include="Images\Home\icons8_home_16.png" />
+    <None Include="Images\Home\icons8_User_Menu_Female_64.png" />
+    <Content Include="Images\ql\119000213 %281%29 – Đã sửa.png" />
+    <None Include="Images\ql\le.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\QLNhanVien\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

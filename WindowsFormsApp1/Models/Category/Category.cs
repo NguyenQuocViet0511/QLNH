@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.Models.Food
+namespace WindowsFormsApp1.Models.Category
 {
     public class Category
     {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_login));
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lbl_User = new System.Windows.Forms.Label();
@@ -143,6 +144,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.ErrorImage = null;
             this.pictureBox3.Image = global::WindowsFormsApp1.Properties.Resources.icons8_female_user_64;
             this.pictureBox3.Location = new System.Drawing.Point(775, 269);
             this.pictureBox3.Name = "pictureBox3";
@@ -164,9 +166,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Untitled;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Untitled;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(709, 720);
