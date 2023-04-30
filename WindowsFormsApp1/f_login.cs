@@ -13,8 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAL;
-using WindowsFormsApp1.DAL.APIController;
-using WindowsFormsApp1.DAL.APIController.Table;
+using WindowsFormsApp1.DAL.APIService;
+using WindowsFormsApp1.DAL.APIService.Table;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Models.Tables;
 

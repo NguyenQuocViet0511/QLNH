@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WindowsFormsApp1.Models.Tables
 {
 
-    public class MyData
+    public class TableData 
     {
     
         public FoodDao data;

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Models;
 
-namespace WindowsFormsApp1.DAL.APIController
+namespace WindowsFormsApp1.DAL.APIService
 {
     public class BaseAPI : BaseAPIInterFace
     {
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.DAL.APIController
             set => instance = value;
         }
 
-        public string All(string url, NameValueCollection Table, string Method)
+        public  String All(string url, NameValueCollection Table, string Method)
         {
             WebClient Client = new WebClient();
             //Client.Headers[HttpRequestHeader.ContentType] = "application/json";

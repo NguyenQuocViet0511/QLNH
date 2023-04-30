@@ -1,29 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAL.APIService.Category;
 using WindowsFormsApp1.DAL.APIService.Food;
-using WindowsFormsApp1.DAL.Sqlserver;
 using WindowsFormsApp1.Models.Category;
 using WindowsFormsApp1.Models.Food;
 
 namespace WindowsFormsApp1.UI.QLMenu
 {
-    public partial class QLMenu : Form
+    public partial class QLMenus : Form
     {
-
         private FoodData food;
         private CategoryData category;
-        public QLMenu()
+        public QLMenus()
         {
             InitializeComponent();
         }
+
         public async Task loadData()
         {
             // load data food to view
@@ -51,7 +44,7 @@ namespace WindowsFormsApp1.UI.QLMenu
 
 
 
-
+     
 
         private void cbn_categoryfood_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -72,7 +65,7 @@ namespace WindowsFormsApp1.UI.QLMenu
             }
             else
             {
-
+         
                 //envent
                 if (MessageBox.Show("Bạn có muôn Thêm Sản Phẩm Mới Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
@@ -84,7 +77,7 @@ namespace WindowsFormsApp1.UI.QLMenu
                     btn_add.Text = "Thêm";
                     //add new 
                     Checkempty();
-
+                  
 
                 }
 
@@ -136,25 +129,25 @@ namespace WindowsFormsApp1.UI.QLMenu
 
             }
         }
-        private void clearText(string text)
+            private void clearText(string text)
         {
-            txt_foodname.Text = text;
+            txt_foodname.Text = text; 
             txt_foodprice.Text = text;
             txt_discountfood.Text = text;
         }
         private void Checkempty()
         {
-            if (string.IsNullOrEmpty(txt_foodname.Text) || string.IsNullOrEmpty(txt_discountfood.Text) || string.IsNullOrEmpty(txt_foodprice.Text))
+            if(string.IsNullOrEmpty(txt_foodname.Text) || string.IsNullOrEmpty(txt_discountfood.Text) || string.IsNullOrEmpty(txt_foodprice.Text))
             {
                 MessageBox.Show("Vui Lòng Nhập đầy đủ vô ");
 
             }
             else
             {
-                string Result = APIFood.Instance.Edit(txt_foodid.Text, txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString()).ToString();
+                string Result = APIFood.Instance.Edit(txt_foodid.Text,txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString()).ToString();
                 MessageBox.Show(Result);
                 loadData();
-            }
+            }    
         }
         private void delete()
         {
@@ -172,10 +165,15 @@ namespace WindowsFormsApp1.UI.QLMenu
 
             }
         }
+        private void QLMenu_Load(object sender, EventArgs e)
+        {
 
-        private void btn_add_Click(object sender, EventArgs e)
+        }
+
+        private void btn_add_Click_1(object sender, EventArgs e)
         {
             Add();
+
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
@@ -183,7 +181,7 @@ namespace WindowsFormsApp1.UI.QLMenu
             Edit();
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void btn_delete_Click_1(object sender, EventArgs e)
         {
             delete();
         }

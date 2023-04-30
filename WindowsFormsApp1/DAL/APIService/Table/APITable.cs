@@ -5,22 +5,23 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.UI.WebControls;
-using WindowsFormsApp1.Models.Category;
-using WindowsFormsApp1.Models.Food;
+using WindowsFormsApp1.Models.Tables;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace WindowsFormsApp1.DAL.APIController.Category
+namespace WindowsFormsApp1.DAL.APIService.Table
 {
-    public class APICategory
+    public class APITable 
     {
-        private static APICategory instance;
+        private static APITable instance;
 
-        public static APICategory Instance
+        public static APITable Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new APICategory();
+                    instance = new APITable();
                 return instance;
 
             }
@@ -28,37 +29,43 @@ namespace WindowsFormsApp1.DAL.APIController.Category
         }
 
 
+
         bool Clickadd = true;
         bool Clickedit = true;
         public bool ClickAdd { get => Clickadd; set => Clickadd = value; }
         public bool ClickEdit { get => Clickedit; set => Clickedit = value; }
 
-        public CategoryData GetAll()
-        {
-            string Result = BaseAPI.Instance.Get(Const.URL + "category/list");
-            CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
+
+        public async Task<TableData> GetAll()
+        {   
+            string Result = BaseAPI.Instance.Get(Const.URL + "tables/list");
+            TableData data = JsonConvert.DeserializeObject<TableData>(Result);
             return data;
         }
-        public String Add(string name)
+        public String Add(string name, string status, string id_bill)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/create", table, "POST");
+            table["status"] = status;
+            table["id_bill"] = id_bill;
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name)
+        public String Edit(string id,string name, string status, string id_bill)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/update", table, "POST");
+            table["status"] = status;
+            table["id_bill"] = id_bill;
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
             return Result;
         }
         public String delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/delete", table, "POST");
             return Result;
         }
 

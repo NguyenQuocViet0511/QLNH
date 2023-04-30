@@ -5,11 +5,12 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using WindowsFormsApp1.Models.Category;
 using WindowsFormsApp1.Models.Food;
 
-namespace WindowsFormsApp1.DAL.APIController.Food
+namespace WindowsFormsApp1.DAL.APIService.Food
 {
     public class APIFood
     {
@@ -32,16 +33,16 @@ namespace WindowsFormsApp1.DAL.APIController.Food
         public bool ClickAdd { get => Clickadd; set => Clickadd = value; }
         public bool ClickEdit { get => Clickedit; set => Clickedit = value; }
 
-        
 
 
-        public FoodData GetAll()
+
+        public async Task<FoodData> GetAll()
         {
             string Result = BaseAPI.Instance.Get(Const.URL + "food/list");
             FoodData data = JsonConvert.DeserializeObject<FoodData>(Result);
             return data;
         }
-        public String Add(string name,string price,string discount,string id_category)
+        public async Task<string> Add(string name,string price,string discount,string id_category)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
@@ -52,7 +53,7 @@ namespace WindowsFormsApp1.DAL.APIController.Food
             string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
             return Result;
         }
-        public String Edit(string id,string name, string price, string discount, string id_category)
+        public async Task<string> Edit(string id,string name, string price, string discount, string id_category)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
@@ -63,7 +64,7 @@ namespace WindowsFormsApp1.DAL.APIController.Food
             string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
             return Result;
         }
-        public String delete(string id)
+        public async Task<string> delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
