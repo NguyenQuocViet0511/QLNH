@@ -37,21 +37,34 @@ namespace WindowsFormsApp1.DAL.APIService.Table
 
 
         public async Task<TableData> GetAll()
-        {   
+        {
             string Result = BaseAPI.Instance.Get(Const.URL + "tables/list");
+            if(Result == null)
+            {
+                return null;
+            }    
             TableData data = JsonConvert.DeserializeObject<TableData>(Result);
             return data;
+     
+
         }
-        public String Add(string name, string status, string id_bill)
+        public String Add(string name)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            table["status"] = status;
-            table["id_bill"] = id_bill;
             string Result = BaseAPI.Instance.All(Const.URL + "tables/create", table, "POST");
             return Result;
         }
-        public String Edit(string id,string name, string status, string id_bill)
+        public String Edit(string id,string name)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["id"] = id;
+            table["name"] = name;
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
+            return Result;
+        }
+
+        public String UpdateByIDbill(string id, string name, string status, string id_bill)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;

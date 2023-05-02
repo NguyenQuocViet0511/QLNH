@@ -27,20 +27,24 @@ namespace WindowsFormsApp1.UI.QLTable
         public async void loadData()
         {
             Table = await APITable.Instance.GetAll();
-            dgv_table.DataSource = Table.data.data;
-            txt_id.DataBindings.Clear();
-            txt_id.DataBindings.Add("text", Table.data.data, "id");
-            txt_nametable.DataBindings.Clear();
-            txt_nametable.DataBindings.Add("text", Table.data.data, "name");
-            txt_tablestatus.DataBindings.Clear();
-            txt_tablestatus.DataBindings.Add("text", Table.data.data, "status");
+            if (Table != null)
+            {
+                dgv_table.DataSource = Table.data.data;
+                txt_id.DataBindings.Clear();
+                txt_id.DataBindings.Add("text", Table.data.data, "id");
+                txt_nametable.DataBindings.Clear();
+                txt_nametable.DataBindings.Add("text", Table.data.data, "name");
+                txt_tablestatus.DataBindings.Clear();
+                txt_tablestatus.DataBindings.Add("text", Table.data.data, "status");
+            }
+
         }
         private void Add()
         {
-            if (APITable.Instance.ClickAdd)
+            if (APIFood.Instance.ClickAdd)
             {
                 clearText("");
-                APITable.Instance.ClickAdd = false;
+                APIFood.Instance.ClickAdd = false;
                 txt_nametable.Enabled = true;
                 btn_add.Text = "Đồng Ý";
                 //event add
@@ -51,42 +55,115 @@ namespace WindowsFormsApp1.UI.QLTable
                 //envent
                 if (MessageBox.Show("Bạn có muôn Thêm Sản Phẩm Mới Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
-                    APITable.Instance.ClickAdd = true;
-                    txt_nametable.Enabled = false;
-              
+
                     btn_add.Text = "Thêm";
                     //add new 
-                    Checkempty();
+                    if (Checkempty())
+                    {
+                        string Result = APITable.Instance.Add(txt_nametable.Text);
+                        MessageBox.Show(Result);
+                        APIFood.Instance.ClickAdd = true;
+                        txt_tablestatus.Enabled = false;
+                        loadData();
+                    }
+                    else
+                    {
 
+                        MessageBox.Show(" Vui Lòng Nhập đầy đủ");
+                    }
+                }
+                else
+                {
+                    APIFood.Instance.ClickAdd = true;
+                    txt_nametable.Enabled = false;
+                    loadData();
 
                 }
 
-                APITable.Instance.ClickAdd = true;
-                txt_nametable.Enabled = false;
-                btn_add.Text = "Thêm";
-                loadData();
+
+
+            }
+
+        }
+
+        private void Edit()
+        {
+            if (APIFood.Instance.ClickAdd)
+            {
+                APIFood.Instance.ClickAdd = false;
+                txt_nametable.Enabled = true;
+                btn_edit.Text = "Đồng Ý";
+                //event add
+            }
+            else
+            {
+
+                //envent
+                if (MessageBox.Show("Bạn có muôn Sửa Sản Phẩm  Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    APIFood.Instance.ClickAdd = true;
+                    txt_nametable.Enabled = false;
+                    btn_edit.Text = "Sửa";
+                    //add new 
+                    if (Checkempty())
+                    {
+                        string Result = APITable.Instance.Edit(txt_id.Text, txt_nametable.Text);
+                        MessageBox.Show(Result.ToString());
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Vui Lòng Nhập đầy đủ");
+
+                    }
+
+                }
+                else
+                {
+                    APIFood.Instance.ClickAdd = true;
+                    txt_nametable.Enabled = false;
+                    btn_edit.Text = "Thêm";
+                    loadData();
+                }
+
+
 
             }
         }
         private void clearText(string text)
         {
             txt_nametable.Text = text;
-            txt_tablestatus.Text = text;
             txt_id.Text = text;
         }
-        private void Checkempty()
+        private bool Checkempty()
         {
             if (string.IsNullOrEmpty(txt_nametable.Text))
             {
-                MessageBox.Show("Vui Lòng Nhập đầy đủ vô ");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void delete()
+        {
+            if (MessageBox.Show("Bạn có muôn Xóa Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+
+                string Result = APITable.Instance.delete(txt_id.Text).ToString();
+                MessageBox.Show(Result);
+                loadData();
 
             }
             else
             {
-                //MessageBox.Show(Result);
                 loadData();
+
             }
         }
+
+
         private void dgv_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -102,6 +179,14 @@ namespace WindowsFormsApp1.UI.QLTable
 
         }
 
-    
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            Edit();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            delete();
+        }
     }
 }

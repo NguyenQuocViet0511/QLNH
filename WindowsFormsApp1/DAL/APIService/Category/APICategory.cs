@@ -37,6 +37,10 @@ namespace WindowsFormsApp1.DAL.APIService.Category
         public CategoryData GetAll()
         {
             string Result = BaseAPI.Instance.Get(Const.URL + "category/list");
+            if (Result == null)
+            {
+                return null;
+            }
             CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
             return data;
         }

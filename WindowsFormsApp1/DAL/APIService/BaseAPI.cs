@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.DAL.APIService
@@ -28,22 +33,52 @@ namespace WindowsFormsApp1.DAL.APIService
             set => instance = value;
         }
 
-        public  String All(string url, NameValueCollection Table, string Method)
+        public String All(string url, NameValueCollection Table, string Method)
         {
-            WebClient Client = new WebClient();
-            //Client.Headers[HttpRequestHeader.ContentType] = "application/json";
-            Client.Encoding  = Encoding.UTF8;
-            var responsebytes = Client.UploadValues(url, Method, Table);
-            string reponsive = UnicodeEncoding.UTF8.GetString(responsebytes);
-            return reponsive;
+
+                    WebClient Client = new WebClient();         
+                    Client.Encoding = Encoding.UTF8;
+                    var responsebytes = Client.UploadValues(url, Method, Table);
+                    string reponsive = UnicodeEncoding.UTF8.GetString(responsebytes);
+                    return reponsive;
+            
+               
+       
+            
+    
         }
 
-   
-        public string Get(string url)
+           
+
+       public string Get(string url)
         {
             WebClient Client = new WebClient();
-            var json = Client.DownloadString(url);
-            return json;
+            try
+            {
+                using (Client.OpenRead(url))
+                {
+                    var json = Client.DownloadString(url);
+                    return json;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi Máy Chủ Hoặc Không Có Phản Hồi Vui Lòng Thử Lại !");
+                return null;
+            }
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

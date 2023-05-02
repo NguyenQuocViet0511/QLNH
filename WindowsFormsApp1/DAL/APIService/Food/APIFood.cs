@@ -39,6 +39,10 @@ namespace WindowsFormsApp1.DAL.APIService.Food
         public async Task<FoodData> GetAll()
         {
             string Result = BaseAPI.Instance.Get(Const.URL + "food/list");
+            if (Result == null)
+            {
+                return null;
+            }
             FoodData data = JsonConvert.DeserializeObject<FoodData>(Result);
             return data;
         }
@@ -53,7 +57,7 @@ namespace WindowsFormsApp1.DAL.APIService.Food
             string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
             return Result;
         }
-        public async Task<string> Edit(string id,string name, string price, string discount, string id_category)
+        public String Edit(string id,string name, string price, string discount, string id_category)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
@@ -64,7 +68,7 @@ namespace WindowsFormsApp1.DAL.APIService.Food
             string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
             return Result;
         }
-        public async Task<string> delete(string id)
+        public string delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
