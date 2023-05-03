@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Models.Food
 {
-    public class Category
+    public class Food
     {
 
         private int ID;
@@ -18,11 +18,11 @@ namespace WindowsFormsApp1.Models.Food
         private int Id_category;
         private string category_name;
 
-        public Category()
+        public Food()
         {
 
         }
-        public Category(int id, string name, double price, double discount, int count, string images, int id_category,string category_name)
+        public Food(int id, string name, double price, double discount, int count, string images,bool status, int id_category,string category_name)
         {
             this.ID = id;
             this.Name = name;

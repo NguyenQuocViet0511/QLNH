@@ -28,26 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLMenu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_food = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.idFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foodname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countfood = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.images = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txt_foodid = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txt_foodprice = new WindowsFormsApp1.Customer.numbertextbox();
             this.buttonX11 = new DevComponents.DotNetBar.ButtonX();
             this.txt_foodname = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbn_categoryfood = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -58,13 +49,23 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX7 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+            this.btn_last = new DevComponents.DotNetBar.ButtonX();
+            this.btn_next = new DevComponents.DotNetBar.ButtonX();
+            this.btn_prev = new DevComponents.DotNetBar.ButtonX();
+            this.btn_first = new DevComponents.DotNetBar.ButtonX();
             this.btn_delete = new DevComponents.DotNetBar.ButtonX();
             this.btn_edit = new DevComponents.DotNetBar.ButtonX();
             this.btn_add = new DevComponents.DotNetBar.ButtonX();
+            this.txt_foodprice = new WindowsFormsApp1.Customer.numbertextbox();
+            this.idFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foodname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countfood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.images = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_food)).BeginInit();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -85,85 +86,24 @@
             this.discount,
             this.countfood,
             this.images,
+            this.status,
             this.category_name,
             this.id_category});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_food.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_food.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_food.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_food.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_food.Location = new System.Drawing.Point(0, 85);
             this.dgv_food.Name = "dgv_food";
             this.dgv_food.ReadOnly = true;
-            this.dgv_food.Size = new System.Drawing.Size(794, 480);
+            this.dgv_food.Size = new System.Drawing.Size(798, 480);
             this.dgv_food.TabIndex = 50;
-            // 
-            // idFood
-            // 
-            this.idFood.DataPropertyName = "id";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idFood.DefaultCellStyle = dataGridViewCellStyle7;
-            this.idFood.HeaderText = "Mã Món Ăn";
-            this.idFood.Name = "idFood";
-            this.idFood.ReadOnly = true;
-            // 
-            // foodname
-            // 
-            this.foodname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.foodname.DataPropertyName = "name";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foodname.DefaultCellStyle = dataGridViewCellStyle8;
-            this.foodname.HeaderText = "Tên Món Ăn";
-            this.foodname.Name = "foodname";
-            this.foodname.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "price";
-            this.price.HeaderText = "Giá";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // discount
-            // 
-            this.discount.DataPropertyName = "discount";
-            this.discount.HeaderText = "Giảm Giá";
-            this.discount.Name = "discount";
-            this.discount.ReadOnly = true;
-            // 
-            // countfood
-            // 
-            this.countfood.DataPropertyName = "count";
-            this.countfood.HeaderText = "Số Lượng Bán";
-            this.countfood.Name = "countfood";
-            this.countfood.ReadOnly = true;
-            // 
-            // images
-            // 
-            this.images.DataPropertyName = "images";
-            this.images.HeaderText = "Hình ảnh";
-            this.images.Name = "images";
-            this.images.ReadOnly = true;
-            // 
-            // category_name
-            // 
-            this.category_name.DataPropertyName = "category_name";
-            this.category_name.HeaderText = "Danh Mục";
-            this.category_name.Name = "category_name";
-            this.category_name.ReadOnly = true;
-            // 
-            // id_category
-            // 
-            this.id_category.DataPropertyName = "id_category";
-            this.id_category.HeaderText = "id_category";
-            this.id_category.Name = "id_category";
-            this.id_category.ReadOnly = true;
-            this.id_category.Visible = false;
             // 
             // panelEx1
             // 
@@ -174,7 +114,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(794, 85);
+            this.panelEx1.Size = new System.Drawing.Size(798, 85);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -206,7 +146,7 @@
             this.textBoxX1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxX1.Location = new System.Drawing.Point(14, 37);
             this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(761, 27);
+            this.textBoxX1.Size = new System.Drawing.Size(765, 27);
             this.textBoxX1.TabIndex = 0;
             // 
             // groupPanel2
@@ -228,9 +168,9 @@
             this.groupPanel2.Controls.Add(this.pictureBox1);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupPanel2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel2.Location = new System.Drawing.Point(794, 0);
+            this.groupPanel2.Location = new System.Drawing.Point(798, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(649, 565);
+            this.groupPanel2.Size = new System.Drawing.Size(645, 565);
             // 
             // 
             // 
@@ -278,15 +218,6 @@
             this.txt_foodid.Size = new System.Drawing.Size(380, 35);
             this.txt_foodid.TabIndex = 25;
             // 
-            // txt_foodprice
-            // 
-            this.txt_foodprice.Enabled = false;
-            this.txt_foodprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_foodprice.Location = new System.Drawing.Point(246, 228);
-            this.txt_foodprice.Name = "txt_foodprice";
-            this.txt_foodprice.Size = new System.Drawing.Size(380, 35);
-            this.txt_foodprice.TabIndex = 24;
-            // 
             // buttonX11
             // 
             this.buttonX11.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -319,9 +250,9 @@
             this.cbn_categoryfood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbn_categoryfood.FormattingEnabled = true;
             this.cbn_categoryfood.ItemHeight = 29;
-            this.cbn_categoryfood.Location = new System.Drawing.Point(380, 284);
+            this.cbn_categoryfood.Location = new System.Drawing.Point(389, 284);
             this.cbn_categoryfood.Name = "cbn_categoryfood";
-            this.cbn_categoryfood.Size = new System.Drawing.Size(246, 35);
+            this.cbn_categoryfood.Size = new System.Drawing.Size(241, 35);
             this.cbn_categoryfood.TabIndex = 16;
             // 
             // txt_discountfood
@@ -332,9 +263,9 @@
             this.txt_discountfood.Border.Class = "TextBoxBorder";
             this.txt_discountfood.Enabled = false;
             this.txt_discountfood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_discountfood.Location = new System.Drawing.Point(380, 342);
+            this.txt_discountfood.Location = new System.Drawing.Point(389, 344);
             this.txt_discountfood.Name = "txt_discountfood";
-            this.txt_discountfood.Size = new System.Drawing.Size(189, 35);
+            this.txt_discountfood.Size = new System.Drawing.Size(241, 35);
             this.txt_discountfood.TabIndex = 14;
             // 
             // labelX7
@@ -352,7 +283,7 @@
             // 
             this.labelX8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
             this.labelX8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX8.Location = new System.Drawing.Point(246, 342);
+            this.labelX8.Location = new System.Drawing.Point(246, 344);
             this.labelX8.Name = "labelX8";
             this.labelX8.SingleLineColor = System.Drawing.SystemColors.Control;
             this.labelX8.Size = new System.Drawing.Size(126, 39);
@@ -362,7 +293,7 @@
             // labelX9
             // 
             this.labelX9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.Location = new System.Drawing.Point(246, 282);
+            this.labelX9.Location = new System.Drawing.Point(246, 284);
             this.labelX9.Name = "labelX9";
             this.labelX9.SingleLineColor = System.Drawing.SystemColors.Control;
             this.labelX9.Size = new System.Drawing.Size(128, 37);
@@ -393,10 +324,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
-            this.panel2.Controls.Add(this.buttonX6);
-            this.panel2.Controls.Add(this.buttonX7);
-            this.panel2.Controls.Add(this.buttonX5);
-            this.panel2.Controls.Add(this.buttonX4);
+            this.panel2.Controls.Add(this.btn_last);
+            this.panel2.Controls.Add(this.btn_next);
+            this.panel2.Controls.Add(this.btn_prev);
+            this.panel2.Controls.Add(this.btn_first);
             this.panel2.Controls.Add(this.btn_delete);
             this.panel2.Controls.Add(this.btn_edit);
             this.panel2.Controls.Add(this.btn_add);
@@ -406,49 +337,53 @@
             this.panel2.Size = new System.Drawing.Size(1443, 60);
             this.panel2.TabIndex = 47;
             // 
-            // buttonX6
+            // btn_last
             // 
-            this.buttonX6.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX6.Location = new System.Drawing.Point(193, 16);
-            this.buttonX6.Name = "buttonX6";
-            this.buttonX6.Size = new System.Drawing.Size(46, 32);
-            this.buttonX6.TabIndex = 46;
-            this.buttonX6.Text = ">>";
+            this.btn_last.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_last.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_last.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_last.Location = new System.Drawing.Point(193, 16);
+            this.btn_last.Name = "btn_last";
+            this.btn_last.Size = new System.Drawing.Size(46, 32);
+            this.btn_last.TabIndex = 46;
+            this.btn_last.Text = ">>";
+            this.btn_last.Click += new System.EventHandler(this.btn_last_Click);
             // 
-            // buttonX7
+            // btn_next
             // 
-            this.buttonX7.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX7.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX7.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX7.Location = new System.Drawing.Point(137, 16);
-            this.buttonX7.Name = "buttonX7";
-            this.buttonX7.Size = new System.Drawing.Size(46, 32);
-            this.buttonX7.TabIndex = 45;
-            this.buttonX7.Text = ">";
+            this.btn_next.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_next.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_next.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next.Location = new System.Drawing.Point(137, 16);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(46, 32);
+            this.btn_next.TabIndex = 45;
+            this.btn_next.Text = ">";
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
-            // buttonX5
+            // btn_prev
             // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX5.Location = new System.Drawing.Point(70, 16);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(46, 32);
-            this.buttonX5.TabIndex = 44;
-            this.buttonX5.Text = "<";
+            this.btn_prev.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_prev.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_prev.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prev.Location = new System.Drawing.Point(70, 16);
+            this.btn_prev.Name = "btn_prev";
+            this.btn_prev.Size = new System.Drawing.Size(46, 32);
+            this.btn_prev.TabIndex = 44;
+            this.btn_prev.Text = "<";
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
             // 
-            // buttonX4
+            // btn_first
             // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX4.Location = new System.Drawing.Point(14, 16);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(46, 32);
-            this.buttonX4.TabIndex = 43;
-            this.buttonX4.Text = "<<";
+            this.btn_first.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_first.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_first.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_first.Location = new System.Drawing.Point(14, 16);
+            this.btn_first.Name = "btn_first";
+            this.btn_first.Size = new System.Drawing.Size(46, 32);
+            this.btn_first.TabIndex = 43;
+            this.btn_first.Text = "<<";
+            this.btn_first.Click += new System.EventHandler(this.btn_first_Click);
             // 
             // btn_delete
             // 
@@ -486,6 +421,86 @@
             this.btn_add.Text = "Thêm";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // txt_foodprice
+            // 
+            this.txt_foodprice.Enabled = false;
+            this.txt_foodprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_foodprice.Location = new System.Drawing.Point(246, 228);
+            this.txt_foodprice.Name = "txt_foodprice";
+            this.txt_foodprice.Size = new System.Drawing.Size(380, 35);
+            this.txt_foodprice.TabIndex = 24;
+            // 
+            // idFood
+            // 
+            this.idFood.DataPropertyName = "id";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idFood.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idFood.HeaderText = "Mã Món Ăn";
+            this.idFood.Name = "idFood";
+            this.idFood.ReadOnly = true;
+            // 
+            // foodname
+            // 
+            this.foodname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.foodname.DataPropertyName = "name";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodname.DefaultCellStyle = dataGridViewCellStyle2;
+            this.foodname.HeaderText = "Tên Món Ăn";
+            this.foodname.Name = "foodname";
+            this.foodname.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // discount
+            // 
+            this.discount.DataPropertyName = "discount";
+            this.discount.HeaderText = "Giảm Giá";
+            this.discount.Name = "discount";
+            this.discount.ReadOnly = true;
+            // 
+            // countfood
+            // 
+            this.countfood.DataPropertyName = "count";
+            this.countfood.HeaderText = "Số Lượng Bán";
+            this.countfood.Name = "countfood";
+            this.countfood.ReadOnly = true;
+            // 
+            // images
+            // 
+            this.images.DataPropertyName = "images";
+            this.images.HeaderText = "Hình ảnh";
+            this.images.Name = "images";
+            this.images.ReadOnly = true;
+            this.images.Visible = false;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Trạng thái";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Visible = false;
+            // 
+            // category_name
+            // 
+            this.category_name.DataPropertyName = "category_name";
+            this.category_name.HeaderText = "Danh Mục";
+            this.category_name.Name = "category_name";
+            this.category_name.ReadOnly = true;
+            // 
+            // id_category
+            // 
+            this.id_category.DataPropertyName = "id_category";
+            this.id_category.HeaderText = "id_category";
+            this.id_category.Name = "id_category";
+            this.id_category.ReadOnly = true;
+            this.id_category.Visible = false;
+            // 
             // QLMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,14 +527,6 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv_food;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFood;
-        private System.Windows.Forms.DataGridViewTextBoxColumn foodname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countfood;
-        private System.Windows.Forms.DataGridViewTextBoxColumn images;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_category;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
@@ -537,12 +544,21 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private DevComponents.DotNetBar.ButtonX buttonX6;
-        private DevComponents.DotNetBar.ButtonX buttonX7;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
+        private DevComponents.DotNetBar.ButtonX btn_last;
+        private DevComponents.DotNetBar.ButtonX btn_next;
+        private DevComponents.DotNetBar.ButtonX btn_prev;
+        private DevComponents.DotNetBar.ButtonX btn_first;
         private DevComponents.DotNetBar.ButtonX btn_delete;
         private DevComponents.DotNetBar.ButtonX btn_edit;
         private DevComponents.DotNetBar.ButtonX btn_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn foodname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countfood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn images;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_category;
     }
 }

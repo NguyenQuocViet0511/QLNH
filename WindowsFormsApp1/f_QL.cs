@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
         private void btn_food_Click(object sender, EventArgs e)
         {
             QLMenu menu = new QLMenu();
-            menu.loadData();
+            menu.LoadData();
             Const.Instance.CheckExistingTab(ManagerTabController, "Quản Lí Menu", menu);
         }
 

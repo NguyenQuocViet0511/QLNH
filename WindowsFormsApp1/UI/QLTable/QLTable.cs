@@ -27,6 +27,7 @@ namespace WindowsFormsApp1.UI.QLTable
         public async void loadData()
         {
             Table = await APITable.Instance.GetAll();
+
             if (Table != null)
             {
                 dgv_table.DataSource = Table.data.data;
@@ -134,6 +135,7 @@ namespace WindowsFormsApp1.UI.QLTable
         {
             txt_nametable.Text = text;
             txt_id.Text = text;
+            txt_tablestatus.Text = text;
         }
         private bool Checkempty()
         {
@@ -187,6 +189,30 @@ namespace WindowsFormsApp1.UI.QLTable
         private void btn_delete_Click(object sender, EventArgs e)
         {
             delete();
+        }
+
+        private void btn_first_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[Table.data.data].Position = 0;
+
+        }
+
+        private void btn_prev_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[Table.data.data].Position--;
+
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[Table.data.data].Position++;
+
+        }
+
+        private void btn_last_Click(object sender, EventArgs e)
+        {
+            int ViTri = this.BindingContext[Table.data.data].Count - 1;
+            this.BindingContext[Table.data.data].Position = ViTri;
         }
     }
 }

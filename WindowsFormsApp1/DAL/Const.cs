@@ -27,7 +27,7 @@ namespace WindowsFormsApp1.DAL
             set => instance = value;
         }
 
-
+       
         public void CheckExistingTab(DevComponents.DotNetBar.TabControl TabControl, string Text, Form From)
         {
 
