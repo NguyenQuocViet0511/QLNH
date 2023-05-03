@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.dgv_table = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -50,13 +50,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX7 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.btn_edit = new DevComponents.DotNetBar.ButtonX();
             this.btn_delete = new DevComponents.DotNetBar.ButtonX();
             this.btn_add = new DevComponents.DotNetBar.ButtonX();
+            this.btn_last = new DevComponents.DotNetBar.ButtonX();
+            this.btn_next = new DevComponents.DotNetBar.ButtonX();
+            this.btn_prev = new DevComponents.DotNetBar.ButtonX();
+            this.btn_first = new DevComponents.DotNetBar.ButtonX();
             this.panel1.SuspendLayout();
             this.panelEx3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_table)).BeginInit();
@@ -108,14 +108,14 @@
             this.name,
             this.status,
             this.id_bill});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_table.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_table.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_table.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv_table.Location = new System.Drawing.Point(0, 103);
@@ -355,10 +355,10 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.panelEx2.Controls.Add(this.buttonX6);
-            this.panelEx2.Controls.Add(this.buttonX7);
-            this.panelEx2.Controls.Add(this.buttonX5);
-            this.panelEx2.Controls.Add(this.buttonX4);
+            this.panelEx2.Controls.Add(this.btn_last);
+            this.panelEx2.Controls.Add(this.btn_next);
+            this.panelEx2.Controls.Add(this.btn_prev);
+            this.panelEx2.Controls.Add(this.btn_first);
             this.panelEx2.Controls.Add(this.btn_edit);
             this.panelEx2.Controls.Add(this.btn_delete);
             this.panelEx2.Controls.Add(this.btn_add);
@@ -376,50 +376,6 @@
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 1;
             this.panelEx2.Text = "\'";
-            // 
-            // buttonX6
-            // 
-            this.buttonX6.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX6.Location = new System.Drawing.Point(196, 15);
-            this.buttonX6.Name = "buttonX6";
-            this.buttonX6.Size = new System.Drawing.Size(46, 32);
-            this.buttonX6.TabIndex = 42;
-            this.buttonX6.Text = ">>";
-            // 
-            // buttonX7
-            // 
-            this.buttonX7.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX7.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX7.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX7.Location = new System.Drawing.Point(140, 15);
-            this.buttonX7.Name = "buttonX7";
-            this.buttonX7.Size = new System.Drawing.Size(46, 32);
-            this.buttonX7.TabIndex = 41;
-            this.buttonX7.Text = ">";
-            // 
-            // buttonX5
-            // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX5.Location = new System.Drawing.Point(73, 15);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(46, 32);
-            this.buttonX5.TabIndex = 40;
-            this.buttonX5.Text = "<";
-            // 
-            // buttonX4
-            // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX4.Location = new System.Drawing.Point(17, 15);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(46, 32);
-            this.buttonX4.TabIndex = 39;
-            this.buttonX4.Text = "<<";
             // 
             // btn_edit
             // 
@@ -463,6 +419,54 @@
             this.btn_add.Text = "Thêm";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // btn_last
+            // 
+            this.btn_last.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_last.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_last.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_last.Location = new System.Drawing.Point(210, 18);
+            this.btn_last.Name = "btn_last";
+            this.btn_last.Size = new System.Drawing.Size(46, 32);
+            this.btn_last.TabIndex = 50;
+            this.btn_last.Text = ">>";
+            this.btn_last.Click += new System.EventHandler(this.btn_last_Click);
+            // 
+            // btn_next
+            // 
+            this.btn_next.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_next.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_next.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next.Location = new System.Drawing.Point(154, 18);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(46, 32);
+            this.btn_next.TabIndex = 49;
+            this.btn_next.Text = ">";
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
+            // 
+            // btn_prev
+            // 
+            this.btn_prev.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_prev.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_prev.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prev.Location = new System.Drawing.Point(87, 18);
+            this.btn_prev.Name = "btn_prev";
+            this.btn_prev.Size = new System.Drawing.Size(46, 32);
+            this.btn_prev.TabIndex = 48;
+            this.btn_prev.Text = "<";
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
+            // 
+            // btn_first
+            // 
+            this.btn_first.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_first.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_first.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_first.Location = new System.Drawing.Point(31, 18);
+            this.btn_first.Name = "btn_first";
+            this.btn_first.Size = new System.Drawing.Size(46, 32);
+            this.btn_first.TabIndex = 47;
+            this.btn_first.Text = "<<";
+            this.btn_first.Click += new System.EventHandler(this.btn_first_Click);
+            // 
             // QLTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,10 +497,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
-        private DevComponents.DotNetBar.ButtonX buttonX6;
-        private DevComponents.DotNetBar.ButtonX buttonX7;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
         private DevComponents.DotNetBar.ButtonX btn_edit;
         private DevComponents.DotNetBar.ButtonX btn_delete;
         private DevComponents.DotNetBar.ButtonX btn_add;
@@ -516,5 +516,9 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txt_id;
         private System.Windows.Forms.Label label6;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_tablestatus;
+        private DevComponents.DotNetBar.ButtonX btn_last;
+        private DevComponents.DotNetBar.ButtonX btn_next;
+        private DevComponents.DotNetBar.ButtonX btn_prev;
+        private DevComponents.DotNetBar.ButtonX btn_first;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class f_table : Form
+    public partial class f_tachban : Form
     {
-        public f_table()
+        public f_tachban()
         {
             InitializeComponent();
         }

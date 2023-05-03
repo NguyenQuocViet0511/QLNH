@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace WindowsFormsApp1.Models.Food
 {
 
-    public class FoodData 
+    public class FoodData
     {
     
-        public CategoryDao data;
+        public FoodDao data;
     
     }
 
-    public class CategoryDao
+    public class FoodDao
     {
         public string total;
 
-        public List<Category> data;
+        public List<Food> data;
         
     }
 

@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\..\..\Documents\Zalo Received Files\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>C:\Users\namle\Documents\Zalo Received Files\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -65,6 +65,12 @@
     <Compile Include="DAL\APIService\Category\APICategory.cs" />
     <Compile Include="DAL\APIService\Food\APIFood.cs" />
     <Compile Include="DAL\Const.cs" />
+    <Compile Include="f_voca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_voca.Designer.cs">
+      <DependentUpon>f_voca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category\Category.cs" />
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
@@ -77,11 +83,11 @@
     <Compile Include="DAL\Sqlserver\Query.cs" />
     <Compile Include="DAL\Sqlserver\staff.cs" />
     <Compile Include="DAL\Sqlserver\Users.cs" />
-    <Compile Include="f_addDM.cs">
+    <Compile Include="f_tachban.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f_addDM.Designer.cs">
-      <DependentUpon>f_addDM.cs</DependentUpon>
+    <Compile Include="f_tachban.Designer.cs">
+      <DependentUpon>f_tachban.cs</DependentUpon>
     </Compile>
     <Compile Include="f_Home.cs">
       <SubType>Form</SubType>
@@ -107,11 +113,11 @@
     <Compile Include="f_QL.Designer.cs">
       <DependentUpon>f_QL.cs</DependentUpon>
     </Compile>
-    <Compile Include="f_table.cs">
+    <Compile Include="f_note.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f_table.Designer.cs">
-      <DependentUpon>f_table.cs</DependentUpon>
+    <Compile Include="f_note.Designer.cs">
+      <DependentUpon>f_note.cs</DependentUpon>
     </Compile>
     <Compile Include="itemfood.cs">
       <SubType>UserControl</SubType>
@@ -149,8 +155,8 @@
     <Compile Include="UI\QLTable\QLTable.Designer.cs">
       <DependentUpon>QLTable.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="f_addDM.resx">
-      <DependentUpon>f_addDM.cs</DependentUpon>
+    <EmbeddedResource Include="f_tachban.resx">
+      <DependentUpon>f_tachban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_Home.resx">
       <DependentUpon>f_Home.cs</DependentUpon>
@@ -164,8 +170,11 @@
     <EmbeddedResource Include="f_QL.resx">
       <DependentUpon>f_QL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f_table.resx">
-      <DependentUpon>f_table.cs</DependentUpon>
+    <EmbeddedResource Include="f_note.resx">
+      <DependentUpon>f_note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_voca.resx">
+      <DependentUpon>f_voca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="itemfood.resx">
       <DependentUpon>itemfood.cs</DependentUpon>

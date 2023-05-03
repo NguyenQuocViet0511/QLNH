@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAL.APIService.Category;
 using WindowsFormsApp1.DAL.APIService.Food;
-using WindowsFormsApp1.DAL.Sqlserver;
 using WindowsFormsApp1.Models.Category;
 using WindowsFormsApp1.Models.Food;
 
@@ -23,9 +22,13 @@ namespace WindowsFormsApp1.UI.QLMenu
         public QLMenu()
         {
             InitializeComponent();
+            LoadData();
         }
-        public async Task loadData()
+
+        //loaddata
+        public async void LoadData()
         {
+
             // load data food to view
             food = await APIFood.Instance.GetAll();
             if (food != null)
@@ -48,9 +51,14 @@ namespace WindowsFormsApp1.UI.QLMenu
                 cbn_categoryfood.DisplayMember = "name";
                 cbn_categoryfood.ValueMember = "id";
             }
-
+            else
+            {
+                MessageBox.Show("Không Có Dữ Liệu");
+            }
         }
 
+
+        //Add
         private void Add()
         {
             if (APIFood.Instance.ClickAdd)
@@ -61,6 +69,11 @@ namespace WindowsFormsApp1.UI.QLMenu
                 txt_foodprice.Enabled = true;
                 txt_discountfood.Enabled = true;
                 cbn_categoryfood.Enabled = true;
+                txt_foodid.DataBindings.Clear();
+                txt_foodname.DataBindings.Clear();
+                txt_foodprice.DataBindings.Clear();
+                txt_discountfood.DataBindings.Clear();
+
                 btn_add.Text = "Đồng Ý";
                 //event add
             }
@@ -75,14 +88,22 @@ namespace WindowsFormsApp1.UI.QLMenu
                     //add new 
                     if (Checkempty())
                     {
-                        string Result = APIFood.Instance.Add(txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString()).ToString();
-                        MessageBox.Show(Result);
-                        APIFood.Instance.ClickAdd = true;
-                        txt_foodname.Enabled = false;
-                        txt_foodprice.Enabled = false;
-                        txt_discountfood.Enabled = false;
-                        cbn_categoryfood.Enabled = false;
-                        loadData();
+                        if(CheckName(txt_foodname.Text))
+                        {
+                            string Result = APIFood.Instance.Add(txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString()).ToString();
+                            MessageBox.Show(Result);
+                            APIFood.Instance.ClickAdd = true;
+                            txt_foodname.Enabled = false;
+                            txt_foodprice.Enabled = false;
+                            txt_discountfood.Enabled = false;
+                            cbn_categoryfood.Enabled = false;
+                            LoadData();
+                        } else
+                        {
+                            MessageBox.Show("Đã Có Tên Trong Danh Sách Vui Lòng Nhập Vào Tên Khác");
+                        }    
+           
+
                     }
                     else
                     {
@@ -96,7 +117,7 @@ namespace WindowsFormsApp1.UI.QLMenu
                     txt_foodprice.Enabled = false;
                     txt_discountfood.Enabled = false;
                     cbn_categoryfood.Enabled = false;
-                    loadData();
+                    LoadData();
 
                 }
 
@@ -106,6 +127,7 @@ namespace WindowsFormsApp1.UI.QLMenu
 
         }
 
+        //Edit 
         private void Edit()
         {
             if (APIFood.Instance.ClickAdd)
@@ -133,9 +155,17 @@ namespace WindowsFormsApp1.UI.QLMenu
                     //add new 
                     if (Checkempty())
                     {
-                        string Result = APIFood.Instance.Edit(txt_foodid.Text, txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString());
-                        MessageBox.Show(Result.ToString());
-                        loadData();
+                        if (CheckName(txt_foodname.Text))
+                        {
+                            string Result = APIFood.Instance.Edit(txt_foodid.Text, txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString());
+                            MessageBox.Show(Result.ToString());
+                            LoadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã Có Tên Trong Danh Sách Vui Lòng Nhập Vào Tên Khác");
+                        }
+                    
                     }
                     else
                     {
@@ -151,19 +181,22 @@ namespace WindowsFormsApp1.UI.QLMenu
                     txt_discountfood.Enabled = false;
                     cbn_categoryfood.Enabled = false;
                     btn_edit.Text = "Thêm";
-                    loadData();
-                }    
+                    LoadData();
+                }
 
-  
+
 
             }
         }
+
+        //cleardata
         private void clearText(string text)
             {
                 txt_foodname.Text = text;
                 txt_foodprice.Text = text;
                 txt_discountfood.Text = text;
             }
+        //check Empty
             private bool Checkempty()
             {
                 if(string.IsNullOrEmpty(txt_foodname.Text) || string.IsNullOrEmpty(txt_discountfood.Text) || string.IsNullOrEmpty(txt_foodprice.Text))
@@ -175,6 +208,7 @@ namespace WindowsFormsApp1.UI.QLMenu
                     return true;
                 }
             }
+        //delete
             private void delete()
             {
                 if (MessageBox.Show("Bạn có muôn Xóa Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
@@ -182,16 +216,27 @@ namespace WindowsFormsApp1.UI.QLMenu
 
                     string Result = APIFood.Instance.delete(txt_foodid.Text).ToString();
                     MessageBox.Show(Result);
-                    loadData();
+                LoadData();
 
-                }
-                else
-                {
-                    loadData();
-
-                }
             }
+            else
+                {
+                LoadData();
 
+            }
+        }
+        private bool CheckName(String text)
+        {
+            foreach (var item in food.data.data)
+            {
+                if (item.name.Equals(text))
+                {
+                    return false;
+                }
+                    
+            }
+            return true;
+        }
         private void btn_add_Click(object sender, EventArgs e)
         {
             Add();
@@ -205,6 +250,30 @@ namespace WindowsFormsApp1.UI.QLMenu
         private void btn_delete_Click(object sender, EventArgs e)
         {
             delete();
+        }
+
+        private void btn_first_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position = 0;
+        }
+
+        private void btn_last_Click(object sender, EventArgs e)
+        {
+            int ViTri = this.BindingContext[food.data.data].Count - 1;
+            this.BindingContext[food.data.data].Position = ViTri;
+
+        }
+
+        private void btn_prev_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position--;
+
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position++;
+
         }
     }
 

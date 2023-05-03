@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class f_ODER : Form
+    public partial class f_table : Form
     {
-        public f_ODER()
+        public f_table()
         {
             InitializeComponent();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

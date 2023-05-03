@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class f_addDM : Form
+    public partial class f_voca : Form
     {
-        public f_addDM()
+        public f_voca()
         {
             InitializeComponent();
         }
