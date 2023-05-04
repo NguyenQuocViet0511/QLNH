@@ -138,6 +138,10 @@ namespace WindowsFormsApp1.UI.QLMenu
                 txt_discountfood.Enabled = true;
                 cbn_categoryfood.Enabled = true;
                 btn_edit.Text = "Đồng Ý";
+                txt_foodid.DataBindings.Clear();
+                txt_foodname.DataBindings.Clear();
+                txt_foodprice.DataBindings.Clear();
+                txt_discountfood.DataBindings.Clear();
                 //event add
             }
             else
@@ -146,11 +150,7 @@ namespace WindowsFormsApp1.UI.QLMenu
                 //envent
                 if (MessageBox.Show("Bạn có muôn Sửa Sản Phẩm  Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
-                    APIFood.Instance.ClickAdd = true;
-                    txt_foodname.Enabled = false;
-                    txt_foodprice.Enabled = false;
-                    txt_discountfood.Enabled = false;
-                    cbn_categoryfood.Enabled = false;
+         
                     btn_edit.Text = "Sửa";
                     //add new 
                     if (Checkempty())
@@ -159,6 +159,11 @@ namespace WindowsFormsApp1.UI.QLMenu
                         {
                             string Result = APIFood.Instance.Edit(txt_foodid.Text, txt_foodname.Text, txt_foodprice.Text, txt_discountfood.Text, cbn_categoryfood.SelectedValue.ToString());
                             MessageBox.Show(Result.ToString());
+                            APIFood.Instance.ClickAdd = true;
+                            txt_foodname.Enabled = false;
+                            txt_foodprice.Enabled = false;
+                            txt_discountfood.Enabled = false;
+                            cbn_categoryfood.Enabled = false;
                             LoadData();
                         }
                         else

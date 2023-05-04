@@ -146,6 +146,7 @@ namespace WindowsFormsApp1.UI.QLCategory
                 return true;
             }
         }
+
         private void delete()
         {
             if (MessageBox.Show("Bạn có muôn Xóa Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)

@@ -45,6 +45,7 @@ namespace WindowsFormsApp1.UI.QLTable
             if (APIFood.Instance.ClickAdd)
             {
                 clearText("");
+                txt_nametable.DataBindings.Clear();
                 APIFood.Instance.ClickAdd = false;
                 txt_nametable.Enabled = true;
                 btn_add.Text = "Đồng Ý";
@@ -61,11 +62,18 @@ namespace WindowsFormsApp1.UI.QLTable
                     //add new 
                     if (Checkempty())
                     {
-                        string Result = APITable.Instance.Add(txt_nametable.Text);
-                        MessageBox.Show(Result);
-                        APIFood.Instance.ClickAdd = true;
-                        txt_tablestatus.Enabled = false;
-                        loadData();
+                        if(CheckName(txt_nametable.Text))
+                        {
+                            string Result = APITable.Instance.Add(txt_nametable.Text);
+                            MessageBox.Show(Result);
+                            APIFood.Instance.ClickAdd = true;
+                            txt_tablestatus.Enabled = false;
+                            loadData();
+                        }    
+                           else
+                        {
+                            MessageBox.Show("Tên Này đã Có Trong Danh Sách Vui Lòng Thử Lại Tên Khác");
+                        }
                     }
                     else
                     {
@@ -91,6 +99,7 @@ namespace WindowsFormsApp1.UI.QLTable
         {
             if (APIFood.Instance.ClickAdd)
             {
+                txt_nametable.DataBindings.Clear();
                 APIFood.Instance.ClickAdd = false;
                 txt_nametable.Enabled = true;
                 btn_edit.Text = "Đồng Ý";
@@ -102,15 +111,24 @@ namespace WindowsFormsApp1.UI.QLTable
                 //envent
                 if (MessageBox.Show("Bạn có muôn Sửa Sản Phẩm  Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
-                    APIFood.Instance.ClickAdd = true;
-                    txt_nametable.Enabled = false;
+                 
                     btn_edit.Text = "Sửa";
                     //add new 
                     if (Checkempty())
                     {
-                        string Result = APITable.Instance.Edit(txt_id.Text, txt_nametable.Text);
-                        MessageBox.Show(Result.ToString());
-                        loadData();
+                        if(CheckName(txt_nametable.Text))
+                        {
+                            string Result = APITable.Instance.Edit(txt_id.Text, txt_nametable.Text);
+                            MessageBox.Show(Result.ToString());
+                            APIFood.Instance.ClickAdd = true;
+                            txt_nametable.Enabled = false;
+                            loadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tên Này đã Có Trong Danh Sách Vui Lòng Thử Lại Tên Khác");
+                        }
+                   
                     }
                     else
                     {
@@ -165,7 +183,18 @@ namespace WindowsFormsApp1.UI.QLTable
             }
         }
 
+        private bool CheckName(String text)
+        {
+            foreach (var item in Table.data.data)
+            {
+                if (item.name.Equals(text))
+                {
+                    return false;
+                }
 
+            }
+            return true;
+        }
         private void dgv_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
