@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.Models.Category
     public class Category
     {
 
-        private int ID;
+        private string ID;
         private string Name;
 
 
@@ -17,14 +17,14 @@ namespace WindowsFormsApp1.Models.Category
         {
 
         }
-        public Category(int id, string name)
+        public Category(string id, string name)
         {
             this.ID = id;
             this.Name = name;
  
         }
 
-        public int id { get => ID; set => ID = value; }
+        public string id { get => ID; set => ID = value; }
         public string name { get => Name; set => Name = value; }
 
     }

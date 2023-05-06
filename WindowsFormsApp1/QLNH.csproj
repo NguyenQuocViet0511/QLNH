@@ -57,6 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer\Food.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\Food.Designer.cs">
+      <DependentUpon>Food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\itemoder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\itemoder.Designer.cs">
+      <DependentUpon>itemoder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\numbertextbox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,6 +137,29 @@
     <Compile Include="Models\User\usersDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Itemoder\billitem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Itemoder\billitem.Designer.cs">
+      <DependentUpon>billitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Map\Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Map\Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Oder\OderFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Oder\OderFood.Designer.cs">
+      <DependentUpon>OderFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\QLCategory\QLCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +184,12 @@
     <Compile Include="UI\QLTable\QLTable.Designer.cs">
       <DependentUpon>QLTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Customer\Food.resx">
+      <DependentUpon>Food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\itemoder.resx">
+      <DependentUpon>itemoder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_addDM.resx">
       <DependentUpon>f_addDM.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,14 +213,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="UI\Itemoder\billitem.resx">
+      <DependentUpon>billitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Map\Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Oder\OderFood.resx">
+      <DependentUpon>OderFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\QLCategory\QLCategory.resx">
       <DependentUpon>QLCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +366,16 @@
     <None Include="Images\Home\icons8_minus_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\foody-upload-api-foody-mobile-ne-jpg-180504170627.jpg" />
+    <None Include="Resources\circular-arows.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\pay-per-click.png" />
+    <None Include="Resources\credit-card.png" />
+    <None Include="Resources\cooking.png" />
+    <None Include="Resources\dollar.png" />
+    <None Include="Resources\dish.png" />
+    <None Include="Resources\round-table %281%29.png" />
+    <None Include="Resources\round-table.png" />
     <None Include="Images\Home\32_32.png" />
     <None Include="Images\Home\icons8_home_16.png" />
     <None Include="Images\Home\icons8_User_Menu_Female_64.png" />

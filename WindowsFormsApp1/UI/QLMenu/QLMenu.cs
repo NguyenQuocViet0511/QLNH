@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.UI.QLMenu
         public QLMenu()
         {
             InitializeComponent();
-            LoadData();
+
         }
 
         //loaddata

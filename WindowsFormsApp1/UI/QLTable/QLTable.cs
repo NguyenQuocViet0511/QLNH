@@ -67,7 +67,7 @@ namespace WindowsFormsApp1.UI.QLTable
                             string Result = APITable.Instance.Add(txt_nametable.Text);
                             MessageBox.Show(Result);
                             APIFood.Instance.ClickAdd = true;
-                            txt_tablestatus.Enabled = false;
+                            txt_nametable.Enabled = false;
                             loadData();
                         }    
                            else

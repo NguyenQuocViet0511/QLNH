@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Customer
 {
-    public partial class f_ODER : Form
+    public partial class itemoder : UserControl
     {
-        public f_ODER()
+        public itemoder()
         {
             InitializeComponent();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAL.APIService.Table;
 using WindowsFormsApp1.Models.Tables;
+using WindowsFormsApp1.UI.Itemoder;
+using WindowsFormsApp1.UI.Map;
+using WindowsFormsApp1.UI.Oder;
 
 namespace WindowsFormsApp1
 {
     public partial class f_Home : Form
     {
-        TableData Table;
-        DevComponents.DotNetBar.ButtonX button;
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         public f_Home()
         {
@@ -36,58 +42,46 @@ namespace WindowsFormsApp1
            
             f_QL f_QL = new f_QL();
             f_QL.ShowDialog();
-        
+
 
         }
 
         private void buttonX6_Click(object sender, EventArgs e)
         {
-            f_ODER f_ODER = new f_ODER();   
-            f_ODER.ShowDialog();    
+    
         }
 
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+ 
+  
 
-        private async Task LoadMapAsync()
+        private void btnoder_Click(object sender, EventArgs e)
         {
-            panel_Map.Controls.Clear();
-            Table = await APITable.Instance.GetAll();
-            for(int i =0; i<20;i++)
-            {
-                button = new DevComponents.DotNetBar.ButtonX();
-                button.Text = "Bàn" + " " + i;
-                button.Height = 130;
-                button.Width = 200;           
-                button.Click += Button_Click;
-                button.Tag = i + " " + button.Text;
-                panel_Map.Controls.Add(button);
-            }    
-            
-        }
-        private void SetColorClick(object sender, EventArgs e)
-        {
-            foreach (Control c in panel_Map.Controls)
-            {
-                c.BackColor = Color.Black;
-                c.ForeColor = Color.Black;
-            }
-            Control Click = (Control)sender;
-            Click.BackColor = Color.Black;
-            Click.ForeColor = Color.Red;
-        }
-        private void Button_Click(object sender, EventArgs e)
-        {
-            DevComponents.DotNetBar.ButtonX button = sender as DevComponents.DotNetBar.ButtonX;
-            MessageBox.Show(" " + button.Tag.ToString());
-            SetColorClick(button, null);
+          
+                panel_controller.Controls.Clear();
+                billitem itemoder = new billitem();
+                itemoder.Dock = DockStyle.Fill;
+                itemoder.TopLevel = false;
+                panel_controller.Controls.Add(itemoder);
+                itemoder.Show();
+             
+           
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_map_Click(object sender, EventArgs e)
         {
-            LoadMapAsync();
+            panel_controller.Controls.Clear();
+            Map map = new Map();
+            map.Dock = DockStyle.Fill;
+            map.TopLevel = false;
+            panel_controller.Controls.Add(map);
+            map.Show();
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

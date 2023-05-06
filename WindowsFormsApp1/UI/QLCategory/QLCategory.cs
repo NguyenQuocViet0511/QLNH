@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.UI.QLCategory
             loadData();
         }
 
-        public async void loadData()
+        public  void loadData()
         {
             Category =  APICategory.Instance.GetAll();
 
@@ -53,14 +53,14 @@ namespace WindowsFormsApp1.UI.QLCategory
             {
 
                 //envent
-                if (MessageBox.Show("Bạn có muôn Thêm Sản Phẩm Mới Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                if (MessageBox.Show("Bạn có muôn Thêm Danh Mục Mới Không", "thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
 
                     btn_add.Text = "Thêm";
                     //add new 
                     if (Checkempty())
                     {
-                        string Result = APITable.Instance.Add(txt_categoryname.Text);
+                        string Result = APICategory.Instance.Add(txt_categoryname.Text);
                         MessageBox.Show(Result);
                         APICategory.Instance.ClickAdd = true;
                         txt_status.Enabled = false;
@@ -186,6 +186,11 @@ namespace WindowsFormsApp1.UI.QLCategory
         {
             int ViTri = this.BindingContext[Category.data.data].Count - 1;
             this.BindingContext[Category.data.data].Position = ViTri;
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            Add();
         }
     }
 }

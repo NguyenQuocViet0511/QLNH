@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.DAL.APIService.Category
             CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
             return data;
         }
-        public async Task<string> Add(string name)
+        public string Add(string name)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
